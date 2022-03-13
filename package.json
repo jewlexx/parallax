@@ -29,7 +29,7 @@
     "example": "examples"
   },
   "scripts": {
-    "build:parallax": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc"
   },
   "devDependencies": {
     "rimraf": "3.0.2",
