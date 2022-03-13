@@ -6,7 +6,6 @@ const browserify = require('browserify');
 const browsersync = require('browser-sync').create();
 const buffer = require('vinyl-buffer');
 const notifier = require('node-notifier');
-const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
 const rimraf = require('rimraf');
 const source = require('vinyl-source-stream');
