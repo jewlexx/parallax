@@ -6,6 +6,8 @@
  *              If no gyroscope is available, the cursor position is used.
  */
 
+type Timeout = number;
+
 const helpers = {
   propertyCache: {},
   vendors: [
@@ -63,19 +65,19 @@ const helpers = {
   transformSupport(value) {
     let element = document.createElement('div'),
       propertySupport = false,
-      propertyValue = null,
+      propertyValue: string | null = null,
       featureSupport = false,
-      cssProperty = null,
-      jsProperty = null;
+      cssProperty: string | null = null,
+      jsProperty: string | null = null;
     for (let i = 0, l = helpers.vendors.length; i < l; i++) {
       if (helpers.vendors[i] !== null) {
-        cssProperty = helpers.vendors[i][0] + 'transform';
-        jsProperty = helpers.vendors[i][1] + 'Transform';
+        cssProperty = helpers.vendors[i]![0] + 'transform';
+        jsProperty = helpers.vendors[i]![1] + 'Transform';
       } else {
         cssProperty = 'transform';
         jsProperty = 'transform';
       }
-      if (element.style[jsProperty] !== undefined) {
+      if (element.style[jsProperty]) {
         propertySupport = true;
         break;
       }
@@ -100,20 +102,20 @@ const helpers = {
           }
 
           body.appendChild(element);
-          element.style[jsProperty] = 'translate3d(1px,1px,1px)';
-          propertyValue = window
+          element.style[jsProperty ?? ''] = 'translate3d(1px,1px,1px)';
+          propertyValue &&= window
             .getComputedStyle(element)
-            .getPropertyValue(cssProperty);
+            .getPropertyValue(cssProperty!);
           featureSupport =
             propertyValue !== undefined &&
-            propertyValue.length > 0 &&
+            propertyValue!.length > 0 &&
             propertyValue !== 'none';
           documentElement.style.overflow = documentOverflow;
           body.removeChild(element);
 
           if (isCreatedBody) {
             body.removeAttribute('style');
-            body.parentNode.removeChild(body);
+            body.parentNode?.removeChild(body);
           }
         }
         break;
@@ -127,7 +129,7 @@ const helpers = {
       for (let i = 0, l = helpers.vendors.length; i < l; i++) {
         if (helpers.vendors[i] !== null) {
           jsProperty = helpers.camelCase(
-            helpers.vendors[i][1] + '-' + property,
+            helpers.vendors[i]![1] + '-' + property,
           );
         } else {
           jsProperty = property;
@@ -208,14 +210,14 @@ class Parallax {
   orientationStatus: number;
   motionStatus: number;
   transform2DSupport: any;
-  transform3DSupport: boolean;
+  transform3DSupport: boolean = false;
   pointerEvents: any;
   onReady: any;
   selector: any;
   layers: any;
   originX: any;
   originY: any;
-  detectionTimer: NodeJS.Timeout;
+  detectionTimer?: Timeout | undefined;
   calibrateX: any;
   calibrateY: any;
   invertX: any;
@@ -226,8 +228,8 @@ class Parallax {
   scalarY: any;
   limitX: any;
   limitY: any;
-  calibrationThreshold: number;
-  hoverOnly: boolean;
+  calibrationThreshold?: number;
+  hoverOnly?: boolean;
   relativeInput: any;
   clipRelativeInput: any;
   constructor(element, options) {
@@ -571,8 +573,8 @@ class Parallax {
     let calibratedInputX = this.inputX - this.calibrationX,
       calibratedInputY = this.inputY - this.calibrationY;
     if (
-      Math.abs(calibratedInputX) > this.calibrationThreshold ||
-      Math.abs(calibratedInputY) > this.calibrationThreshold
+      Math.abs(calibratedInputX) > this.calibrationThreshold! ||
+      Math.abs(calibratedInputY) > this.calibrationThreshold!
     ) {
       this.queueCalibration(0);
     }
@@ -707,4 +709,4 @@ class Parallax {
   }
 }
 
-module.exports = Parallax;
+export = Parallax;
