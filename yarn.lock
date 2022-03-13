@@ -5580,7 +5580,6 @@ __metadata:
     gulp-uglify: 3.0.2
     gulp-util: 3.0.8
     node-notifier: 10.0.1
-    raf: 3.4.1
     rimraf: 3.0.2
     vinyl-buffer: 1.0.1
     vinyl-source-stream: 2.0.0
@@ -5759,13 +5758,6 @@ __metadata:
     safe-buffer: ^5.0.1
     sha.js: ^2.4.8
   checksum: 2c950a100b1da72123449208e231afc188d980177d021d7121e96a2de7f2abbc96ead2b87d03d8fe5c318face097f203270d7e27908af9f471c165a4e8e69c92
-  languageName: node
-  linkType: hard
-
-"performance-now@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "performance-now@npm:2.1.0"
-  checksum: 534e641aa8f7cba160f0afec0599b6cecefbb516a2e837b512be0adbe6c1da5550e89c78059c7fabc5c9ffdf6627edabe23eb7c518c4500067a898fa65c2b550
   languageName: node
   linkType: hard
 
@@ -5952,15 +5944,6 @@ __metadata:
   version: 0.2.0
   resolution: "querystring@npm:0.2.0"
   checksum: 8258d6734f19be27e93f601758858c299bdebe71147909e367101ba459b95446fbe5b975bf9beb76390156a592b6f4ac3a68b6087cea165c259705b8b4e56a69
-  languageName: node
-  linkType: hard
-
-"raf@npm:3.4.1":
-  version: 3.4.1
-  resolution: "raf@npm:3.4.1"
-  dependencies:
-    performance-now: ^2.1.0
-  checksum: 50ba284e481c8185dbcf45fc4618ba3aec580bb50c9121385d5698cb6012fe516d2015b1df6dd407a7b7c58d44be8086108236affbce1861edd6b44637c8cd52
   languageName: node
   linkType: hard
 
