@@ -6,8 +6,6 @@
  *              If no gyroscope is available, the cursor position is used.
  */
 
-type Timeout = number;
-
 const helpers = {
   propertyCache: {},
   vendors: [
@@ -217,7 +215,7 @@ class Parallax {
   layers: any;
   originX: any;
   originY: any;
-  detectionTimer?: Timeout | undefined;
+  detectionTimer?: NodeJS.Timeout;
   calibrateX: any;
   calibrateY: any;
   invertX: any;
@@ -693,7 +691,7 @@ class Parallax {
     this.disable();
 
     clearTimeout(this.calibrationTimer);
-    clearTimeout(this.detectionTimer);
+    clearTimeout(this.detectionTimer!);
 
     this.element.removeAttribute('style');
     for (let index = 0; index < this.layers.length; index++) {
