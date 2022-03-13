@@ -5364,7 +5364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-assign@npm:4.1.1, object-assign@npm:4.X, object-assign@npm:^4.1.1":
+"object-assign@npm:4.X, object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
@@ -5580,7 +5580,6 @@ __metadata:
     gulp-uglify: 3.0.2
     gulp-util: 3.0.8
     node-notifier: 10.0.1
-    object-assign: 4.1.1
     raf: 3.4.1
     rimraf: 3.0.2
     vinyl-buffer: 1.0.1
