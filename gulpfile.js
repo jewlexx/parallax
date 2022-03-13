@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const path = require('path');
 
-const autoprefixer = require('autoprefixer');
 const browserify = require('browserify');
 const browsersync = require('browser-sync').create();
 const buffer = require('vinyl-buffer');

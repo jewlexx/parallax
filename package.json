@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
-    "autoprefixer": "10.4.2",
     "babel-preset-es2015": "6.24.1",
     "babelify": "10.0.0",
     "browser-sync": "2.27.7",
