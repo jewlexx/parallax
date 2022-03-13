@@ -1,6 +1,6 @@
 {
-  "name": "parallax-js",
-  "version": "3.1.0",
+  "name": "@soire/parallax",
+  "version": "0.0.0",
   "description": "Parallax Engine that reacts to the orientation of a smart device.",
   "keywords": [
     "parallax",
