@@ -1,0 +1,10 @@
+{
+  "root": "packages/parallax/",
+  "sourceRoot": "packages/parallax/src",
+  "projectType": "lib",
+  "architect": {
+    "build": {
+      "outputs": ["dist"]
+    }
+  }
+}
